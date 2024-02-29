@@ -16,3 +16,7 @@ export interface AppState {
   direction: string;
   nbColors: number;
 }
+
+export interface IAction {
+  type:string,
+  payload?: string|{ color?: string; color1?: string; color2?: string };}
