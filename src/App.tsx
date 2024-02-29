@@ -1,7 +1,6 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
+import Buttons from "./components/Buttons/Index";
 import Gradient from "./components/Gradient";
 
 function App() {
@@ -10,6 +9,7 @@ function App() {
     <div className='app'>
       <div className='nbColors'>0 couleurs générées</div>
 <Gradient/>
+<Buttons/>
     </div>
   );
 }
