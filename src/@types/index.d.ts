@@ -13,6 +13,6 @@ export type TDirection = `${number}deg`;
 export interface AppState {
   firstColor: TColor;
   lastColor: TColor;
-  direction: TDirection;
+  direction: string;
   nbColors: number;
 }
