@@ -1,15 +1,15 @@
 // == Imports
-import { randomHexColor, generateSpanColor } from './utils/color';
+import { randomHexColor, generateSpanColor } from "./utils/color";
 
-import { AppState } from './@types';
+import { AppState } from "./@types";
 
-import './styles/index.scss';
+import "./styles/index.scss";
 
 // == State
 const state: AppState = {
-  firstColor: '#e367a4',
-  lastColor: '#48b1f3',
-  direction: '90deg',
+  firstColor: "#e367a4",
+  lastColor: "#48b1f3",
+  direction: "90deg",
   nbColors: 0,
 };
 
@@ -21,7 +21,7 @@ function renderNbColors() {
     le `!` indique à TS que l'élément ne sera jamais `null`
     (à utiliser avec précaution)
   */
-  document.querySelector('.nbColors')!.innerHTML = `
+  document.querySelector(".nbColors")!.innerHTML = `
     ${nbColors} couleur(s) générée(s)
   `;
 }
@@ -33,7 +33,7 @@ function renderGradient() {
     qui n'a pas de propriété `style` ;
     on spécifie qu'il s'agit d'un `HTMLElement` qui l'a.
   */
-  document.querySelector<HTMLElement>('.gradient')!.style.background = `
+  document.querySelector<HTMLElement>(".gradient")!.style.background = `
     linear-gradient(${direction},${firstColor},${lastColor})
   `;
 }
@@ -45,7 +45,7 @@ function renderColors() {
 
   const result = `${firstSpan} - ${lastSpan}`;
 
-  document.querySelector('.colors')!.innerHTML = result;
+  document.querySelector(".colors")!.innerHTML = result;
 }
 
 // == Initialisation
@@ -54,9 +54,9 @@ renderGradient();
 renderColors();
 
 // == Controls
-document.getElementById('randAll')!.addEventListener('click', () => {
+document.getElementById("randAll")!.addEventListener("click", () => {
   // debug
-  console.log('Random all colors');
+  console.log("Random all colors");
   // data
   state.nbColors += 2;
   state.firstColor = randomHexColor();
@@ -67,7 +67,7 @@ document.getElementById('randAll')!.addEventListener('click', () => {
   renderColors();
 });
 
-document.getElementById('randFirst')!.addEventListener('click', () => {
+document.getElementById("randFirst")!.addEventListener("click", () => {
   // data
   state.nbColors += 1;
   state.firstColor = randomHexColor();
@@ -77,7 +77,7 @@ document.getElementById('randFirst')!.addEventListener('click', () => {
   renderColors();
 });
 
-document.getElementById('randLast')!.addEventListener('click', () => {
+document.getElementById("randLast")!.addEventListener("click", () => {
   // data
   state.nbColors += 1;
   state.lastColor = randomHexColor();
@@ -87,17 +87,17 @@ document.getElementById('randLast')!.addEventListener('click', () => {
   renderColors();
 });
 
-document.getElementById('toLeft')!.addEventListener('click', () => {
+document.getElementById("toLeft")!.addEventListener("click", () => {
   // data
-  state.direction = '270deg';
+  state.direction = "270deg";
   // ui
   renderGradient();
   renderColors();
 });
 
-document.getElementById('toRight')!.addEventListener('click', () => {
+document.getElementById("toRight")!.addEventListener("click", () => {
   // data
-  state.direction = '90deg';
+  state.direction = "90deg";
   // ui
   renderGradient();
   renderColors();
