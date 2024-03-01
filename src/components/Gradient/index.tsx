@@ -1,26 +1,46 @@
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { AppState } from "../../@types";
-import { changeColorFirst } from "../../store/actions/gradient";
+import {
+  changeAllColors,
+  changeColorFirst,
+  changeColorLast,
+} from "../../store/actions/gradient";
+import { randomHexColor } from "../../utils/color";
 
 const Gradient = () => {
-const dispatch=useDispatch()
+  const dispatch = useDispatch();
 
   //On récupère les données du state (store) une à une pour éviter de rerender si juste une partie du state est modifiée
   //Si j'importe tout le state d'un coup, un rerender sera déclenché peu importe si j'utilise ou pas la partie modifiée.
-  const firstColor = useSelector((state:AppState) => state.color.firstColor);
-  const lastColor = useSelector((state:AppState) => state.color.lastColor);
-  const direction = useSelector((state:AppState) => state.color.direction);
+  const firstColor = useSelector((state: AppState) => state.color.firstColor);
+  const lastColor = useSelector((state: AppState) => state.color.lastColor);
+  const direction = useSelector((state: AppState) => state.color.direction);
 
   return (
     <>
       <div className='buttons group'>
-        <button className='button' id='randFirst' onClick={()=>dispatch(changeColorFirst())}>
+        {/* On appel dans le dispatch notre action creator */}
+        <button
+          className='button'
+          id='randFirst'
+          onClick={() => dispatch(changeColorFirst())}
+        >
           Random First
         </button>
-        <button className='button' id='randAll'>
+        <button
+          className='button'
+          id='randAll'
+          onClick={() =>
+            dispatch(changeAllColors())
+          }
+        >
           Random All
         </button>
-        <button className='button' id='randLast'>
+        <button
+          className='button'
+          id='randLast'
+          onClick={() => dispatch(changeColorLast())}
+        >
           Random Last
         </button>
       </div>

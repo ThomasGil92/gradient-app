@@ -42,8 +42,8 @@ const colorReducer = (
     case RANDOM_ALL_COLORS:
       return {
         ...state,
-        lastColor: action.payload?.color2,
-        firstColor: action.payload?.color1,
+        lastColor: randomHexColor(),
+        firstColor: randomHexColor(),
         nbColors: state.nbColors + 2,
       };
     /* case CHANGE_DIRECTION_TO_LEFT:

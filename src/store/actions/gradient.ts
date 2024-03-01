@@ -26,9 +26,8 @@ export const changedirectionToRight = () => ({
 export const changeDirectionTo45 = () => ({
   type: CHANGE_DIRECTION_TO_45,
 }); */
-export const changeAllColors = (color1: TColor, color2: TColor) => ({
+export const changeAllColors = () => ({
   type: RANDOM_ALL_COLORS,
-  payload: { color1, color2 },
 });
 
 export const changeDirection = (direction: string) => ({
