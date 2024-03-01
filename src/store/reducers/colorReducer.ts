@@ -2,9 +2,6 @@ import { AppState, IAction, IPayload } from "../../@types";
 import { randomHexColor } from "../../utils/color";
 import {
   CHANGE_DIRECTION,
-  CHANGE_DIRECTION_TO_45,
-  CHANGE_DIRECTION_TO_LEFT,
-  CHANGE_DIRECTION_TO_RIGHT,
   CHANGE_FIRST_COLOR,
   CHANGE_LAST_COLOR,
   RANDOM_ALL_COLORS,
