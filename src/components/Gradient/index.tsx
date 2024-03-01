@@ -5,7 +5,6 @@ import {
   changeColorFirst,
   changeColorLast,
 } from "../../store/actions/gradient";
-import { randomHexColor } from "../../utils/color";
 
 const Gradient = () => {
   const dispatch = useDispatch();
