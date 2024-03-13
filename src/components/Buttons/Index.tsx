@@ -1,7 +1,7 @@
-import { useDispatch } from "react-redux";
 import { changeDirection } from "../../store/actions/gradient";
+import { useAppDispatch } from "../../store/redux-hooks";
 const Buttons = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   return (
     <div className='buttons group'>
       <button
@@ -27,7 +27,6 @@ const Buttons = () => {
       </button>
       <button
         className='button'
-        
         onClick={() => dispatch(changeDirection("10deg"))}
       >
         to 10°

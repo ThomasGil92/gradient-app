@@ -1,19 +1,19 @@
-import { useSelector, useDispatch } from "react-redux";
-import { AppState } from "../../@types";
+
 import {
   changeAllColors,
   changeColorFirst,
   changeColorLast,
 } from "../../store/actions/gradient";
+import { useAppDispatch, useAppSelector } from "../../store/redux-hooks";
 
 const Gradient = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   //On récupère les données du state (store) une à une pour éviter de rerender si juste une partie du state est modifiée
   //Si j'importe tout le state d'un coup, un rerender sera déclenché peu importe si j'utilise ou pas la partie modifiée.
-  const firstColor = useSelector((state: AppState) => state.color.firstColor);
-  const lastColor = useSelector((state: AppState) => state.color.lastColor);
-  const direction = useSelector((state: AppState) => state.color.direction);
+  const firstColor = useAppSelector((state) => state.color.firstColor);
+  const lastColor = useAppSelector((state) => state.color.lastColor);
+  const direction = useAppSelector((state) => state.color.direction);
 
   return (
     <>
